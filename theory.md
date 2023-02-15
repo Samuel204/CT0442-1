@@ -1,7 +1,5 @@
 # PEL - Theory 
 
----
-
 ### Tipo di dato: 
 Insieme di valori sui quali vengono definite delle operazioni.
 
