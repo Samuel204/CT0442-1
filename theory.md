@@ -1,5 +1,7 @@
 # PEL - Theory 
 
+---
+
 ### Tipo di dato: 
 Insieme di valori sui quali vengono definite delle operazioni.
 
@@ -146,3 +148,149 @@ int main(){
 }
 ````
 Passaggio di parametri per referenza o per indirizzo: passo dei left value.
+
+---
+
+### Funzioni
+Parametri di una funzione: parametri formali<br>
+Passaggio dei parametri per: valore / copia - referenza / indirizzo
+
+#### Copia - Valore
+````c++
+void esempio(int a, double b){
+    ...
+}
+````
+Non modifica i valori dei parametri, viene passato un right value
+
+---
+
+#### Referenza - Indirizzo
+````c++
+void esempioref(int& a, int& b){
+    ...
+}
+````
+Modifica i valori dei parametri passati, viene passato un left value
+
+---
+
+### Struct
+````c++
+struct s{
+    int a;
+    double b;
+}
+
+typedef struct s ts;
+
+void foo(ts x){
+    x.a = 12;
+    x.b = 12.3;
+}
+
+int main(){
+    ts y;
+    foo(y);
+    ...
+}
+````
+
+Foo non modifica y.
+
+---
+
+````c++
+void foo(ts& x);
+````
+Foo modifica y, semantica di c++. Non è possibile farlo in c.
+
+---
+
+````c++
+struct s{
+    int a;
+    double b;
+}
+
+typedef struct s ts;
+
+ts foo(ts x){
+    x.a = x.a + 12;
+    x.b = x.b * 2;
+    return x;
+}
+
+int main(){
+    ts y,w;
+    y.a = 4;
+    y.b = 3.0;
+    w = foo(y);
+    ...
+}
+````
+Il main istanzia y, la funzione foo ritorna in i valori modificati di y in w.
+
+---
+
+#### Differene dal codice C
+````c++
+struct s{
+    int a;
+    double b[40];
+}
+typedef struct s ts;
+ts foo(ts x){
+    x.a = x.a + 12;
+    x.b[0] = x.b[0] * 2;
+}
+int main(){
+    ts y,w;
+    y.a = 4;
+    y.b[0] = 3.0;
+    w = foo(y);
+    ...
+}
+````
+x viene passato per copia, viene fatta una deep copy.
+Un array dichiarato dentro la struct viene passato per copia, se viene dichiarato fuori viene passato per indirizzo:
+
+````c++
+void foo2(int a[]){
+    for(int i = 0; i < 20; i++)
+        a[i] = 0;
+}
+int main(){
+    int v[20];
+    foo2(v);
+    //é come fare foo2(&v[0]);
+}
+````
+Passo v per riferimento, v viene modificato. Non useremo mai questa sintassi.
+
+---
+
+### Vectors
+````c++
+#include <vector>
+
+void foo (std::vector<int>& temp){ // passaggio del vettore per indirizzo
+    ...
+}
+
+int main(){
+    std::vector<double> v; //la dichiarazione del tipo in quel modo è definita come template
+    std::vector<int> v(30); //possiamo definire la size in dichiarazione
+    v.push_back(13.4); //inserisce un elemento in coda
+    v.at(0) = 13.2; //controlla se l'indice è nella size dell'array
+    v[0] = 13.2; // non controlla l'indice
+    v.size(); // ritorna la lunghezza dell'array
+    v.pop_back() // rimuove l'ultimo elemento
+    foo(v);
+}
+````
+I template vengono risolti in fase di compilazione
+
+Capacity: memoria occupata dall'array.<br>
+Size: Memoria utilizzata dall'array.<br>
+Se la size è uguale alla capacity e viene fatta una pushback, la capacity viene raddoppiata
