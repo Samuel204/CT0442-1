@@ -3,19 +3,27 @@
 ---
 
 ## Sommario
-- <a href="tipo">Tipo di dato</a>
-- <a href="oggetto">Oggetto</a>
+- <a href="#tipo">Tipo di dati e oggetti</a>
+- <a href="#variabile">Variabili</a>
+- <a href="#puntatori">Puntatori</a>
+- <a href="#cicli">Cicli</a>
+- <a href="#referenza">Referenze</a>
+- <a href="#funzioni">Funzioni</a>
+- <a href="#struct">Struct</a>
+- <a href="#vectors">Vectors</a>
+- <a href="#matrici">Matrici</a>
+- <a href="#esercizio">Esercizio</a>
+- <a href="#stringhe">Stringhe</a>
 ---
 
 ### <p id="tipo">Tipo di dato: </p>
 Insieme di valori sui quali vengono definite delle operazioni.
 
----
-### <p id="oggetto">Oggetto: </p>
+### Oggetto:
 Area di memoria dotata di tipo.
 
 ---
-### Variabile: 
+### <p id="variabile">Variabili</p>
 Oggetto a cui è stato assegnato un identificatore.
 ````c++
 int a;
@@ -25,7 +33,6 @@ a = b;
 Esegue, narrowing (viene messo solo 3 con conseguente perdita di informazioni),
 casting implicito, da evitare.
 
----
 
 ````c++
 int a = 2;
@@ -34,22 +41,30 @@ b = a;
 ````
 Esegue, cast implicito
 
----
-### Inizializzazione
+
+#### Inizializzazione
 ````c++
 int z = 12; 
 //questa è anche una definizione (alloco spazio in z) e una dichiarazione (introduco un nuovo nome)
 int k{12]; 
 //con le graffe controlla il narrowing e se c'è da errore
 ````
+
+#### Costanti
+````c++
+constexpr int a = 7;
+````
+Creiamo una variabile right value;
+
 ---
-### Assegnamento
+
+#### Assegnamento
 ````c++
 int z;
 z = z + 2;
 ````
 ---
-### Puntatori
+## <p id="puntatori">Puntatori</p>
 Si possono usare entrambe le sintassi.
 ````c++
 //c:
@@ -58,7 +73,7 @@ int *p;
 int* p;
 
 ````
----
+
 Assegna a p l'indirizzo di memoria di x
 
 ````c++
@@ -66,17 +81,17 @@ int* p;
 int x;
 p = &x;
 ````
----
+
 ### Operatore * e &
 L'operatore * prende in input un right value e produce un left value
 ````c++
 x = *p + 3;
 ````
----
+
 
 L'operatore & estrae l'indirizzo di memoria di una variabile.
-Lavora su un left  value e produce un right value.
-quindi:
+Lavora su un left value e produce un right value.
+Quindi:
 ````c++
 &x = p;
 ````
@@ -84,15 +99,7 @@ non è corretto
 
 ---
 
-### Costanti
-````c++
-constexpr int a = 7;
-````
-Creiamo una variabile right value;
-
----
-
-## Cicli
+## <p id="cicli">Cicli</p>
 Le variabili dentro la condizione del for vanno modificate solo nella parte di iterazione, non dentro al blocco.
 Né break né continue né goto.
 
@@ -129,7 +136,7 @@ Invariante: il massimo comune divisore non cambia, anche se operiamo su a e b de
 
 ---
 
-## Referenze
+## <p id="referenza">Referenze</p>
 ````c++
 double a;
 double& b = a;
@@ -156,11 +163,11 @@ Passaggio di parametri per referenza o per indirizzo: passo dei left value.
 
 ---
 
-## Funzioni
+## <p id="funzioni">Funzioni</p>
 Parametri di una funzione: parametri formali<br>
 Passaggio dei parametri per: valore / copia - referenza / indirizzo
 
-### Copia - Valore
+#### Copia - Valore
 ````c++
 void esempio(int a, double b){
     ...
@@ -168,9 +175,9 @@ void esempio(int a, double b){
 ````
 Non modifica i valori dei parametri, viene passato un right value
 
----
 
-### Referenza - Indirizzo
+
+#### Referenza - Indirizzo
 ````c++
 void esempioref(int& a, int& b){
     ...
@@ -180,7 +187,7 @@ Modifica i valori dei parametri passati, viene passato un left value
 
 ---
 
-## Struct
+## <p id="struct">Struct</p>
 ````c++
 struct s{
     int a;
@@ -203,14 +210,13 @@ int main(){
 
 Foo non modifica y.
 
----
+
 
 ````c++
 void foo(ts& x);
 ````
 Foo modifica y, semantica di c++. Non è possibile farlo in c.
 
----
 
 ````c++
 struct s{
@@ -236,9 +242,7 @@ int main(){
 ````
 Il main istanzia y, la funzione foo ritorna in i valori modificati di y in w.
 
----
-
-### Differene dal codice C
+#### Differenze dal codice C
 ````c++
 struct s{
     int a;
@@ -275,7 +279,7 @@ Passo v per riferimento, v viene modificato. Non useremo mai questa sintassi.
 
 ---
 
-## Vectors
+## <p id="vectors">Vectors</p>
 ````c++
 #include <vector>
 
@@ -302,7 +306,7 @@ Se la size è uguale alla capacity e viene fatta una pushback, la capacity viene
 
 ---
 
-## Somma degli elementi di un array
+### Somma degli elementi di un array
 
 Il tipo delle varibili è determinato staticamente.<br>
 La valutazione delle espressioni è determinata in esecuzione.<br>
@@ -323,6 +327,8 @@ int main(){
 Invariante: sum è la somma degli elementi tra 0 e i-1.<br>
 Scorro per indice.<br>
 
+---
+
 ### Foreach
 Rappresenta un'altro modo per scorrere gli elementi di un array
 ````c++
@@ -336,6 +342,8 @@ La e rappresenta una copia degli elementi dell'array. Cioé se modifico e non mo
 
 Al posto di int e si può inserire auto in modo da lasciar decidere il tipo della 
 variabile al compliatore in base al tipo degli elementi dell'array.
+
+---
 
 ### Leggi
 ````c++
@@ -368,7 +376,7 @@ Differenze tra le due firme:
 
 ---
 
-## Contatore
+### Contatore
 ````c++
 int main(){
     vector<int> v;
@@ -382,7 +390,7 @@ int main(){
 ````
 Invariante: pari contiene il numero di elementi pari all'interno dell'array.
 
-## Array multidimensionali - Matrici
+## <p id="matrici">Array multidimensionali - Matrici</p>
 ````c++
 #include <vector>
 using namespace std;
@@ -401,7 +409,7 @@ int main(){
 }
 ````
 
-## Problema mazzo di carte
+## <p id="esercizio">Esercizio - Problema mazzo di carte</p>
 
 Array di 40 carte con estrazione casuale senza ripetizioni.
 Soluzione:
@@ -446,7 +454,9 @@ int main(){
     print(mazzo);
 }
 ````
-## Array di caratteri e stringhe
+## <p id="stringhe">Stringhe</p>
+
+Unico modo per definire delle stringhe in c
 ````c++
 char s[200] = "hello";
 char t[50] = "hello";
@@ -460,5 +470,47 @@ char *u;
 u = s;
 if(u == s) //ritorna true
 ````
-DA FINIRE
+Da array di caratteri a stringhe in c++
+````c++
+#include <string>
+
+string s1,s2;
+cin>>s1;
+cin>>s2;
+
+if(s1 == s2) // compara le due stringhe
+s1 = s2 // mette dentro s1 il contenuto di s2
+s1>s2 // ordinamento alfabetico
+// se s1 contiene abaco e s2 contiene abate restituisce false
+
+s3 = s1 + s2 
+s1 = s1 + s2
+// due modi per concatenare le stringhe
+
+s1.lenght() // restituisce il numero di caratteri di s1
+````
+Alcune chiamate a funzione con le stringhe:
+````c++
+void f(string s)
+// copio s, non modifico la stringa originale
+void f1(string& s) 
+// posso modificare la stringa originale
+void f2(const string& s) 
+// s è passata per referenza come su f1 ma il const ci garantisce che non verrà modificata
+````
+---
+
+## Memoria Dinamica
+
+Differenze tra c e c++:
+````c++
+// c
+int* p = (int*)malloc(sizeof(int));
+free();
+//c++
+int a = new int;
+int size = 20;
+int b = new int[size];
+delete[] b;
+````
 
