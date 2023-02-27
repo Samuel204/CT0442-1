@@ -2,12 +2,16 @@
 
 ---
 
+## Sommario
+- <a href="tipo">Tipo di dato</a>
+- <a href="oggetto">Oggetto</a>
+---
 
-### Tipo di dato: 
+### <p id="tipo">Tipo di dato: </p>
 Insieme di valori sui quali vengono definite delle operazioni.
 
 ---
-### Oggetto: 
+### <p id="oggetto">Oggetto: </p>
 Area di memoria dotata di tipo.
 
 ---
@@ -435,11 +439,26 @@ int main(){
     init(mazzo, ncarte);
     print(mazzo);
     std::cout<<"Estrazione "<<std::endl;
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < mazzo.size() / 2; i++){
         std::cout<<estrai(mazzo)<<std::endl;
     }
     std::cout<<"Mazzo Rimanente: "<<std::endl;
     print(mazzo);
 }
 ````
+## Array di caratteri e stringhe
+````c++
+char s[200] = "hello";
+char t[50] = "hello";
+
+if(s == t) // --> ritorna false poiché compara gli indirizzi di memoria
+if(s > t) // compara i due indirizzi di memoria.
+//s viene visto come l'indirizzo di memoria del primo carattere ( &s[0])
+s = t // da errore --> s viene visto come right value e quindi non può stare a sinistra di un assegnamento
+// invece
+char *u;
+u = s;
+if(u == s) //ritorna true
+````
+DA FINIRE
 
