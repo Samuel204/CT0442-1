@@ -3,17 +3,18 @@
 ---
 
 ## Sommario
-- <a href="#tipo">Tipo di dati e oggetti</a>
-- <a href="#variabile">Variabili</a>
-- <a href="#puntatori">Puntatori</a>
-- <a href="#cicli">Cicli</a>
-- <a href="#referenza">Referenze</a>
-- <a href="#funzioni">Funzioni</a>
-- <a href="#struct">Struct</a>
-- <a href="#vectors">Vectors</a>
-- <a href="#matrici">Matrici</a>
-- <a href="#esercizio">Esercizio</a>
-- <a href="#stringhe">Stringhe</a>
+- <a style="color: lightsalmon" href="#tipo">Tipo di dati e oggetti</a>
+- <a style="color: lightsalmon" href="#variabile">Variabili</a>
+- <a style="color: lightsalmon" href="#puntatori">Puntatori</a>
+- <a style="color: lightsalmon" href="#cicli">Cicli</a>
+- <a style="color: lightsalmon" href="#referenza">Referenze</a>
+- <a style="color: lightsalmon" href="#funzioni">Funzioni</a>
+- <a style="color: lightsalmon" href="#struct">Struct</a>
+- <a style="color: lightsalmon" href="#vectors">Vectors</a>
+- <a style="color: lightsalmon" href="#matrici">Matrici</a>
+- <a style="color: lightsalmon" href="#esercizio">Esercizio</a>
+- <a style="color: lightsalmon" href="#stringhe">Stringhe</a>
+- <a style="color: lightsalmon" href="dinamica">Memoria Dinamica</a>
 ---
 
 ### <p id="tipo">Tipo di dato: </p>
@@ -277,6 +278,29 @@ int main(){
 ````
 Passo v per riferimento, v viene modificato. Non useremo mai questa sintassi.
 
+#### Esercizio
+````c++
+struct coppia{
+    int x;
+    int y;
+    int sum(){
+        return x + y;
+    }
+}
+
+int main(){
+    coppia c;
+    c.x = 4;
+    c.y = 6;
+    coppia c1;
+    c1.x = 23;
+    c1.y = 27;
+    cout << c.sum();
+    cout << c1.sum();
+}
+````
+Il risultato che ci aspettiamo dai due <a href="https://cplusplus.com/reference/iostream/cout/" style="color: lightsalmon; font-weight: bold;">cout</a> sono 10 e 50.
+
 ---
 
 ## <p id="vectors">Vectors</p>
@@ -498,9 +522,33 @@ void f1(string& s)
 void f2(const string& s) 
 // s è passata per referenza come su f1 ma il const ci garantisce che non verrà modificata
 ````
+### Palindromo
+````c++
+bool palindroma(const string& s){
+    
+    bool flag = true;
+    
+    for(int i = 0; i < s.length() / 2; ++i)
+        if(s.at(i) != s.at(s.length() - 1 - i)) 
+            flag = false;
+    
+    return flag;
+}
+````
+#### Esercizio
+Dato un vettore di stringhe produrre una stringa che è la concatenazione delle stringhe
+````c++
+string concatena(const vector<string>& vs){
+    string res;
+    for(const auto& el : vs){
+        res += el;
+    }
+    return res;
+}
+````
 ---
 
-## Memoria Dinamica
+## <p id="dinamica">Memoria Dinamica</p>
 
 Differenze tra c e c++:
 ````c++
@@ -513,4 +561,5 @@ int size = 20;
 int b = new int[size];
 delete[] b;
 ````
+
 
