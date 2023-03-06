@@ -3,18 +3,19 @@
 ---
 
 ## Sommario
-- <a style="color: lightsalmon" href="#tipo">Tipo di dati e oggetti</a>
-- <a style="color: lightsalmon" href="#variabile">Variabili</a>
-- <a style="color: lightsalmon" href="#puntatori">Puntatori</a>
-- <a style="color: lightsalmon" href="#cicli">Cicli</a>
-- <a style="color: lightsalmon" href="#referenza">Referenze</a>
-- <a style="color: lightsalmon" href="#funzioni">Funzioni</a>
-- <a style="color: lightsalmon" href="#struct">Struct</a>
-- <a style="color: lightsalmon" href="#vectors">Vectors</a>
-- <a style="color: lightsalmon" href="#matrici">Matrici</a>
-- <a style="color: lightsalmon" href="#esercizio">Esercizio</a>
-- <a style="color: lightsalmon" href="#stringhe">Stringhe</a>
-- <a style="color: lightsalmon" href="dinamica">Memoria Dinamica</a>
+- <a href="#tipo">Tipo di dati e oggetti</a>
+- <a href="#variabile">Variabili</a>
+- <a href="#puntatori">Puntatori</a>
+- <a href="#cicli">Cicli</a>
+- <a href="#referenza">Referenze</a>
+- <a href="#funzioni">Funzioni</a>
+- <a href="#struct">Struct</a>
+- <a href="#vectors">Vectors</a>
+- <a href="#matrici">Matrici</a>
+- <a href="#esercizio">Esercizio</a>
+- <a href="#stringhe">Stringhe</a>
+- <a href="#dinamica">Memoria Dinamica</a>
+- <a hreft="#classi">Classi</a>
 ---
 
 ### <p id="tipo">Tipo di dato: </p>
@@ -299,7 +300,7 @@ int main(){
     cout << c1.sum();
 }
 ````
-Il risultato che ci aspettiamo dai due <a href="https://cplusplus.com/reference/iostream/cout/" style="color: lightsalmon; font-weight: bold;">cout</a> sono 10 e 50.
+Il risultato che ci aspettiamo dai due <a href="https://cplusplus.com/reference/iostream/cout/" >cout</a> sono 10 e 50.
 
 ---
 
@@ -330,7 +331,7 @@ Se la size è uguale alla capacity e viene fatta una pushback, la capacity viene
 
 ---
 
-### Somma degli elementi di un array
+#### Somma degli elementi di un array
 
 Il tipo delle varibili è determinato staticamente.<br>
 La valutazione delle espressioni è determinata in esecuzione.<br>
@@ -353,7 +354,7 @@ Scorro per indice.<br>
 
 ---
 
-### Foreach
+#### Foreach
 Rappresenta un'altro modo per scorrere gli elementi di un array
 ````c++
 for(int e : v){
@@ -369,7 +370,7 @@ variabile al compliatore in base al tipo degli elementi dell'array.
 
 ---
 
-### Leggi
+#### Leggi
 ````c++
 void leggi(vector<int>& tr){
     int num;
@@ -400,7 +401,7 @@ Differenze tra le due firme:
 
 ---
 
-### Contatore
+#### Contatore
 ````c++
 int main(){
     vector<int> v;
@@ -414,6 +415,33 @@ int main(){
 ````
 Invariante: pari contiene il numero di elementi pari all'interno dell'array.
 
+### Bubble sort
+Il bubble sort è un algoritmo di ordinamento. Vediamo come funziona con un esempio:<br>
+Array = [9,7,2,25,19,35,12,10], soglia = 0.<br>
+Invariante: la parte prima della soglia è ordinata e tutta minore della seconda parte della soglia.<br>
+Durante il ciclo l'array arriverà in questa situazione: <br>
+Array = [2,7,9|25,19,35,12,10], soglia = 2.<br>
+
+Metodo di verifica: <br>
+Confronta gli ultimi due elementi dell'array. Se sono disordinati li scambia.<br>
+Contunua così a ritroso per ogni coppia. In questo modo il 10 che era a fine array riesce ad arrivare alla soglia.<br>
+Così facendo la soglia viene incrementata e riinizia il processo del confronto.<br>
+Il costo di questo algoritmo è n<sup>2</sup>.
+````c++
+void bouble_sort(vector<int>& v){
+    int soglia = 0; // il vettore è ordinato nella porzione 0 , -1
+    for(soglia = 0; soglia < v.size(); ++soglia){
+        for(int i = v.size() - 1; i > soglia; i--){
+            if(v.at(i) < v.at(i - 1))
+                scambia(v.at(i), v.at(i - 1));
+        }
+    }
+}
+````
+
+
+---
+
 ## <p id="matrici">Array multidimensionali - Matrici</p>
 ````c++
 #include <vector>
@@ -421,11 +449,12 @@ using namespace std;
 
 int main(){
     vector<vector<int>> matrix;
-    int r,c;
-    cin>>r;
-    cin>>c;
+    int numr,numc;
+    cin>>numr;
+    cin>>numc;
     matrix.resize(r);
-    for(auto e : matrix) e.resize(c);
+    for(int i = 0; i < numr; ++i) 
+        matrix.at(i).resize(numc);
     //metto a 0 tutti gli elementi della matrice
     for(auto r : matrix)
         for(auto& e : r)
@@ -562,4 +591,75 @@ int b = new int[size];
 delete[] b;
 ````
 
+---
+
+## <p id="classi">Classi</p>
+Finora abbiamo visto le struct in c++ come questa:
+````c++
+struct Punto{
+    double x;
+    double y;
+    void trasla(double dx, double dy){
+        x += dx;
+        y += dy;
+    }
+};
+
+int main(){
+    Punto a,b;
+    a.x = 10;
+    a.y = 20;
+    b.x = 4;
+    b.y = 6;
+    a.trasla(-2, 10.5);
+}
+````
+Possiamo però anche definire delle classi allo stesso modo:
+
+````c++
+class Punto{
+    double x;
+    double y;
+    void trasla(double dx, double dy){
+        x += dx;
+        y += dy;
+    }
+};
+````
+#### Differenza tra classi e struct:<br>
+Gli elementi contenuti all'interno delle classi possono essere pubblici o privati.<br>
+In questo caso x, y e trasla sono privati. Se voglio renderli pubblici devo scrivere public:.<br>
+Una classe pubblica è uguale a una struct.
+
+Una possibile implementazione di punto è:
+````c++
+class PuntoAdv{
+    public:
+        void setxy(double mx, double my){
+            x = mx;
+            y = my;
+        }
+        double getx(){
+            return x;
+        }
+        double gety(){
+            return y;
+        }
+        void trasla(double dx, double dy){
+            x += dx;
+            y += dy;
+        }
+    private:
+        double x;
+        double y;
+};
+
+int main(){
+    PuntoAdv a;
+    a.setxy(10.0,3.14);
+    a.trasla(-2.0,10.5);
+    cout<<a.getx()<<a.gety();
+    a.x = 15; // errore perché x è privato
+}
+````
 
