@@ -1,0 +1,3 @@
+/Users/simonedinato/Documents/CT0442-1/stringPascal/cmake-build-debug/CMakeFiles/stringpascal.dir
+/Users/simonedinato/Documents/CT0442-1/stringPascal/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/simonedinato/Documents/CT0442-1/stringPascal/cmake-build-debug/CMakeFiles/rebuild_cache.dir

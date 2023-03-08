@@ -9,10 +9,12 @@
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Default" ENABLED="true" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c06a81f-aa4f-477d-a57f-6c108fd0f6a2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/stringPascal/stringPascal.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theory.md" beforeDir="false" afterPath="$PROJECT_DIR$/theory.md" afterDir="false" />
     </list>
@@ -26,6 +28,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/problemacarte.cpp" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/stringPascal/stringPascal.cpp" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/theory.md" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$USER_HOME$/Library/CloudStorage/OneDrive-unive.it/Uni/A1/PEL/theory.txt" root0="SKIP_INSPECTION" />
   </component>
@@ -52,19 +55,31 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CMakeSettings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/stringPascal" />
+    </key>
+  </component>
+  <component name="RunManager" selected="C/C++ File.stringPascal.cpp">
     <configuration name="problemacarte.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CT0442-1" TARGET_NAME="problemacarte.cpp" CONFIG_NAME="problemacarte.cpp">
       <option name="sourceFile" value="problemacarte.cpp" />
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="stringPascal.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CT0442-1" TARGET_NAME="stringPascal.cpp" CONFIG_NAME="stringPascal.cpp">
+      <option name="sourceFile" value="stringPascal/stringPascal.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="C/C++ File.stringPascal.cpp" />
         <item itemvalue="C/C++ File.problemacarte.cpp" />
       </list>
     </recent_temporary>
@@ -87,6 +102,9 @@
       <workItem from="1677663901037" duration="3733000" />
       <workItem from="1677670026264" duration="35000" />
       <workItem from="1678094457158" duration="5660000" />
+      <workItem from="1678266997231" duration="5687000" />
+      <workItem from="1678273230552" duration="549000" />
+      <workItem from="1678273932359" duration="45000" />
     </task>
     <servers />
   </component>
