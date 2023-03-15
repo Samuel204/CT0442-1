@@ -17,6 +17,12 @@ void stringPascal::print() const{
     cout<<endl;
 }
 
+char& stringPascal::at(int pos) {
+    if(pos < buff[0])
+        return reinterpret_cast<char &>(buff[pos]);
+    else return reinterpret_cast<char &>(buff[buff[0] - 1]);
+}
+
 stringPascal::stringPascal() {
     buff[0] = 0;
 }

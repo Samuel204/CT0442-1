@@ -14,6 +14,7 @@ class stringPascal{
         stringPascal(); // default constructor
         stringPascal(const string& s);
         stringPascal(char* s);
+        char& at(int pos);
         stringPascal(const stringPascal& copy); //copy constructor
         ~stringPascal(); // distruttore
         void print() const; // il metodo print non modifica lo stato della classe
@@ -22,7 +23,7 @@ class stringPascal{
         string getchar(int pos);
         void setsize(int dim);
     private:
-        unsigned char buff[256]{};
+        unsigned char buff[256];
 };
 
 /*
