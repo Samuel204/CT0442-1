@@ -10,7 +10,7 @@ void stringPascal::set(const string& s) {
 
 }
 
-void stringPascal::print(){
+void stringPascal::print() const{
     for(int i = 1; i <= buff[0]; ++i){
         cout << buff[i];
     }
@@ -23,12 +23,26 @@ stringPascal::stringPascal() {
 
 stringPascal::stringPascal(const string& s) {
     set(s);
+    cout << "Costruttore stringa" << endl;
 }
 
-stringPascal::stringPascal(const stringPascal& s) {
-    this->buff[0] = s.buff[0];
-    for(int i = 1; i <= s.buff[0]; ++i)
-        this->buff[i] = s.buff[i];
+stringPascal::stringPascal(char* s){
+    int n = strlen(s);
+    if(n < 256) buff[0] = n;
+    else buff[0] = 255;
+    for(int i = 0; i < buff[0]; i++){
+        buff[i + 1] = char(i);
+    }
+    cout << "Costrutture char" << endl;
+}
+
+stringPascal::stringPascal(const stringPascal& copy) {
+    for(int i = 0; i <= copy.buff[0]; ++i)
+        buff[i] = copy.buff[i];
+}
+
+stringPascal::~stringPascal() {
+    cout << "Chiamato il distruttore di class" << endl;
 }
 
 int main(){
@@ -41,4 +55,7 @@ int main(){
     string cpps = "Hi";
     stringPascal z(cpps);
     stringPascal w(z); //uso del copy constructor
+    char c[100] = "Hello";
+    stringPascal s(c);
+    s.print();
 }
