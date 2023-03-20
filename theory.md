@@ -685,8 +685,11 @@ class stringPascal{
     public:
         stringPascal(); // default constructor
         stringPascal(const string& s);
-        stringPascal(const stringPascal& s); //copy constructor
-        void print();
+        stringPascal(char* s);
+        char& at(int pos);
+        stringPascal(const stringPascal& copy); //copy constructor
+        ~stringPascal(); // distruttore
+        void print() const; // il metodo print non modifica lo stato della classe
         void set(const string& s);
         void setchar(int pos, char c);
         string getchar(int pos);
@@ -710,11 +713,17 @@ void stringPascal::set(const string& s) {
 
 }
 
-void stringPascal::print(){
+void stringPascal::print() const{
     for(int i = 1; i <= buff[0]; ++i){
         cout << buff[i];
     }
     cout<<endl;
+}
+
+char& stringPascal::at(int pos) {
+    if(pos < buff[0])
+        return reinterpret_cast<char &>(buff[pos]);
+    else return reinterpret_cast<char &>(buff[buff[0] - 1]);
 }
 
 stringPascal::stringPascal() {
@@ -723,16 +732,30 @@ stringPascal::stringPascal() {
 
 stringPascal::stringPascal(const string& s) {
     set(s);
+    cout << "Costruttore stringa" << endl;
 }
 
-stringPascal::stringPascal(const stringPascal& s) {
-    this->buff[0] = s.buff[0];
-    for(int i = 1; i <= s.buff[0]; ++i)
-        this->buff[i] = s.buff[i];
+stringPascal::stringPascal(char* s){
+    int n = strlen(s);
+    if(n < 256) buff[0] = n;
+    else buff[0] = 255;
+    for(int i = 0; i < buff[0]; i++){
+        buff[i + 1] = char(i);
+    }
+    cout << "Costrutture char" << endl;
+}
+
+stringPascal::stringPascal(const stringPascal& copy) {
+    for(int i = 0; i <= copy.buff[0]; ++i)
+        buff[i] = copy.buff[i];
+}
+
+stringPascal::~stringPascal() {
+    cout << "Chiamato il distruttore di class" << endl;
 }
 
 int main(){
-    stringPascal x; // uso del deafult constructor
+    stringPascal x;
     stringPascal y;
     x.set("Hi");
     y.set("Hello");
@@ -740,8 +763,15 @@ int main(){
     y.print();
     string cpps = "Hi";
     stringPascal z(cpps);
-    stringPascal w(z); // uso del copy constructor
+    stringPascal w(z); //uso del copy constructor
+    char c[100] = "Hello";
+    stringPascal s(c);
+    s.print();
 }
+
 ````
+
+### Esercizio classe List_int
+
 
 
