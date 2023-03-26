@@ -25,7 +25,7 @@
 using std::vector;
 using std::string;
 
-
+// DA IMPLEMENTARE
 string carta(int n) {
     if(n < 0 || n > 39) return "Errore di conversione";
     string res, s;

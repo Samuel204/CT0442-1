@@ -18,6 +18,7 @@
 #include<iostream>
 #include<iomanip>
 
+// DA IMPLEMENTARE
 double radice(double n, unsigned int k, double min, double max) {
     double res = (max + min) / 2;
     double interval = res;
