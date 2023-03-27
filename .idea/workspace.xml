@@ -14,17 +14,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c06a81f-aa4f-477d-a57f-6c108fd0f6a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Hackerrank/2/verniciature.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hackerrank/3/carrello.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hackerrank/3/findSum.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hackerrank/3/removeRec.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vector_int/vector_int.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vector_int/vector_int.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pimpl/List_int.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pimpl/List_int.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pimpl/princ.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackerrank/2/daNumeroACarta.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Hackerrank/2/daNumeroACarta.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackerrank/2/radiceRicorsiva.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Hackerrank/2/radiceRicorsiva.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/List_int/list_int.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/List_int/list_int.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/List_int/list_int.h" beforeDir="false" afterPath="$PROJECT_DIR$/List_int/list_int.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theory.md" beforeDir="false" afterPath="$PROJECT_DIR$/theory.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +33,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/List_int/list_int.cpp" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/List_int/list_int.h" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Pimpl/List_int.cpp" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/stringPascal/stringPascal.cpp" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/stringPascal/stringPascal.h" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/theory.md" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
@@ -64,7 +61,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CMakeSettings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -124,6 +121,9 @@
       <workItem from="1679477252309" duration="5395000" />
       <workItem from="1679737332474" duration="4386000" />
       <workItem from="1679835318368" duration="1100000" />
+      <workItem from="1679905249273" duration="1217000" />
+      <workItem from="1679906685610" duration="123000" />
+      <workItem from="1679906817766" duration="3305000" />
     </task>
     <servers />
   </component>

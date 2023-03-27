@@ -1,11 +1,12 @@
 #include "list_int.h"
 
+// METODI AGGIUNTI PRECEDENTEMENTE
 List_int::List_int() {
     h = nullptr;
 }
 
-List_int::List_int(const List_int& s) {
-    Pcell pc = s.h;
+List_int::List_int(const List_int& source) {
+    Pcell pc = source.h;
     h = nullptr;
     while(pc != nullptr){
         append(pc->info);
@@ -22,25 +23,25 @@ List_int::~List_int(){
     }
 }
 
-void List_int::prepend(int e) {
+void List_int::prepend(int eL) {
     Pcell nuova = new Cell;
-    nuova->info = e;
+    nuova->info = eL;
     nuova->next = h;
     h = nuova;
 }
 
-void List_int::append(int e) { // funzione cappello
-    append_ric(h, e);
+void List_int::append(int el) { // funzione cappello
+    append_ric(h, el);
 }
 
-void List_int::append_ric(Pcell& testa, int e) {
+void List_int::append_ric(Pcell& testa, int el) {
     if(testa == nullptr){
         testa = new Cell;
-        testa->info = e;
+        testa->info = el;
         testa->next = nullptr;
     }
     else{
-        append_ric(testa->next, e);
+        append_ric(testa->next, el);
     }
 }
 
@@ -76,3 +77,6 @@ int List_int::size() const{
     }
     return res;
 }
+
+// METODI AGGIUNTI POSTERIORMENTE
+

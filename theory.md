@@ -16,6 +16,9 @@
 - <a href="#stringhe">Stringhe</a>
 - <a href="#dinamica">Memoria Dinamica</a>
 - <a hreft="#classi">Classi</a>
+- <a hreft="#pascal">StringPascal</a>
+- <a hreft="#listint">List_int</a>
+- <a hreft="#pimpl">Pimpl</a>
 ---
 
 ### <p id="tipo">Tipo di dato: </p>
@@ -663,7 +666,7 @@ int main(){
 }
 ````
 
-### Esercizio classe stringPascal
+### <p id="pascal">Esercizio classe stringPascal</p>
 
 Codice presente nell' [header](stringPascal/stringPascal.h).
 ````c++
@@ -771,7 +774,135 @@ int main(){
 
 ````
 
-### Esercizio classe List_int
+### <p id="listint">Esercizio classe List_int</p>
 
+Codice presente nell' [header](List_int/List_int.h).
+````c++
+#include <iostream>
+#include <cstdlib>
 
+class List_int {
+    public:
+        List_int();
+
+        List_int(const List_int& source);
+        ~List_int();
+        void append(int el);
+        void prepend(int el);
+        bool isempty() const;
+        int size() const;
+        int& head(); // Pre: List not empty
+        const int& head() const;
+        void print() const;
+
+        //METODI AGGIUNTI POSTERIORMENTE
+        List_int(int el);
+        std::string convert_to_string() const;
+        void tail(List_int& res);
+        int& first();
+        const int& first() const;
+        bool equal(const List_int& l) const;
+        void concat(List_int& l);
+        List_int& operator=(const List_int& source);
+
+    private:
+        struct Cell{
+            int info;
+            Cell* next;
+        };
+        typedef Cell* Pcell;
+        Pcell h;
+        void append_ric(Pcell& testa, int el);
+        void print_ric(Pcell testa) const;
+
+        //CAMPO AGGIUNTO POSTERIORMENTE
+        Pcell last;
+};
+    
+````
+
+Codice presente nel [corpo](List_int/List_int.cpp).
+````c++
+#include "list_int.h"
+
+// METODI AGGIUNTI PRECEDENTEMENTE
+List_int::List_int() {
+    h = nullptr;
+}
+
+List_int::List_int(const List_int& source) {
+    Pcell pc = source.h;
+    h = nullptr;
+    while(pc != nullptr){
+        append(pc->info);
+        pc = pc->next;
+    }
+}
+
+List_int::~List_int(){
+    Pcell pc = h;
+    while(pc != nullptr){
+        h = h->next;
+        delete pc;
+        pc = h;
+    }
+}
+
+void List_int::prepend(int eL) {
+    Pcell nuova = new Cell;
+    nuova->info = eL;
+    nuova->next = h;
+    h = nuova;
+}
+
+void List_int::append(int el) { // funzione cappello
+    append_ric(h, el);
+}
+
+void List_int::append_ric(Pcell& testa, int el) {
+    if(testa == nullptr){
+        testa = new Cell;
+        testa->info = el;
+        testa->next = nullptr;
+    }
+    else{
+        append_ric(testa->next, el);
+    }
+}
+
+bool List_int::isempty() const {
+    return (h == nullptr);
+}
+
+int& List_int::head() {
+    return h->info;
+}
+
+const int& List_int::head() const {
+    return h->info;
+}
+
+void List_int::print() const {
+    print_ric(h);
+}
+
+void List_int::print_ric(Pcell testa) const{
+    if(testa != nullptr){
+        std::cout<<testa->info;
+        print_ric(testa->next);
+    }
+}
+
+int List_int::size() const{
+    int res = 0;
+    Pcell p = h;
+    while(p != nullptr){
+        res++;
+        p = p->next;
+    }
+    return res;
+}
+
+````
+### <p id="pimpl">Pimpl</p>
 
