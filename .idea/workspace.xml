@@ -14,13 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c06a81f-aa4f-477d-a57f-6c108fd0f6a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pimpl/List_int.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pimpl/List_int.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pimpl/princ.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/List_int/list_int.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/List_int/list_int.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/List_int/list_int.h" beforeDir="false" afterPath="$PROJECT_DIR$/List_int/list_int.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/theory.md" beforeDir="false" afterPath="$PROJECT_DIR$/theory.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +119,10 @@
       <workItem from="1679835318368" duration="1100000" />
       <workItem from="1679905249273" duration="1217000" />
       <workItem from="1679906685610" duration="123000" />
-      <workItem from="1679906817766" duration="3305000" />
+      <workItem from="1679906817766" duration="3584000" />
+      <workItem from="1680078777143" duration="370000" />
+      <workItem from="1680079157141" duration="3528000" />
+      <workItem from="1680084176671" duration="21000" />
     </task>
     <servers />
   </component>

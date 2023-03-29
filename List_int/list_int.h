@@ -9,6 +9,7 @@ class List_int {
         ~List_int();
         void append(int el);
         void prepend(int el);
+
         bool isempty() const;
         int size() const;
         int& head(); // Pre: List not empty
@@ -24,6 +25,8 @@ class List_int {
         bool equal(const List_int& l) const;
         void concat(List_int& l);
         List_int& operator=(const List_int& source);
+        int deleteLast(int n);
+
 
     private:
         struct Cell{
@@ -37,4 +40,7 @@ class List_int {
 
         //CAMPO AGGIUNTO POSTERIORMENTE
         Pcell last;
+        int  eliminaFondoRic(Pcell& l, int n);
+        void pre_pend(Pcell l, int el);
+        void ribalta_ric(Pcell&p);
 };
