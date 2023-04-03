@@ -15,10 +15,11 @@
 - <a href="#esercizio">Esercizio</a>
 - <a href="#stringhe">Stringhe</a>
 - <a href="#dinamica">Memoria Dinamica</a>
-- <a hreft="#classi">Classi</a>
-- <a hreft="#pascal">StringPascal</a>
-- <a hreft="#listint">List_int</a>
-- <a hreft="#pimpl">Pimpl</a>
+- <a href="#classi">Classi</a>
+- <a href="#pascal">StringPascal</a>
+- <a href="#listint">List_int</a>
+- <a href="#pimpl">Pimpl</a>
+- <a href="#dl">Double Linked List</a>
 ---
 
 ### <p id="tipo">Tipo di dato: </p>
@@ -666,7 +667,7 @@ int main(){
 }
 ````
 
-### <p id="pascal">Esercizio classe stringPascal</p>
+### <p id="pascal">StringPascal</p>
 
 Codice presente nell' [header](stringPascal/stringPascal.h).
 ````c++
@@ -774,7 +775,7 @@ int main(){
 
 ````
 
-### <p id="listint">Esercizio classe List_int</p>
+### <p id="listint">List_int</p>
 
 Codice presente nell' [header](List_int/List_int.h).
 ````c++
@@ -789,6 +790,7 @@ class List_int {
         ~List_int();
         void append(int el);
         void prepend(int el);
+
         bool isempty() const;
         int size() const;
         int& head(); // Pre: List not empty
@@ -804,6 +806,8 @@ class List_int {
         bool equal(const List_int& l) const;
         void concat(List_int& l);
         List_int& operator=(const List_int& source);
+        int deleteLast(int n);
+
 
     private:
         struct Cell{
@@ -817,8 +821,10 @@ class List_int {
 
         //CAMPO AGGIUNTO POSTERIORMENTE
         Pcell last;
+        int  eliminaFondoRic(Pcell& l, int n);
+        void pre_pend(Pcell l, int el);
+        void ribalta_ric(Pcell&p);
 };
-    
 ````
 
 Codice presente nel [corpo](List_int/List_int.cpp).
@@ -855,15 +861,20 @@ void List_int::prepend(int eL) {
     h = nuova;
 }
 
+void List_int::pre_pend(Pcell l, int el) {
+    Pcell nuova = new Cell;
+    nuova->info = el;
+    nuova->next = h;
+    h = nuova;
+}
+
 void List_int::append(int el) { // funzione cappello
     append_ric(h, el);
 }
 
 void List_int::append_ric(Pcell& testa, int el) {
     if(testa == nullptr){
-        testa = new Cell;
-        testa->info = el;
-        testa->next = nullptr;
+        pre_pend(testa, el);
     }
     else{
         append_ric(testa->next, el);
@@ -903,6 +914,140 @@ int List_int::size() const{
     return res;
 }
 
+// METODI AGGIUNTI POSTERIORMENTE
+int List_int::deleteLast(int n) {
+    return eliminaFondoRic(h,n);
+}
+
+int List_int::eliminaFondoRic(Pcell &l, int n) {
+    if(l == nullptr) return 0;
+    else{
+        int deleted = eliminaFondoRic(l->next, n);
+        if(deleted < n){
+            delete l;
+            l = nullptr;
+            return deleted + 1;
+        }
+        else return n;
+
+
+    }
+}
+
+void List_int::ribalta_ric(Pcell &p) {
+    if(p != nullptr && p->next != nullptr){
+        Pcell supp = p->next;
+        ribalta_ric(supp);
+        p->next->next = p;
+        p->next = nullptr;
+        p = supp;
+    }
+}
 ````
 ### <p id="pimpl">Pimpl</p>
+
+Codice presente nell' [header](Pimpl/List_int.h).
+````c++
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+class List_int {
+    public:
+        List_int();
+        List_int(const List_int& l);
+        ~List_int();
+        void append(int el);
+        void prepend(int el);
+        void stampa() const;
+    private:
+        struct Impl;
+        Impl* pimpl;
+};
+````
+
+Codice presente nel [corpo](Pimpl/List_int.cpp).
+````c++
+#include "List_int.h"
+
+struct List_int::Impl {
+    std::vector<int> v;
+};
+
+List_int::List_int()  {
+    pimpl = new Impl;
+}
+
+List_int::List_int(const List_int &l) {
+    pimpl = new Impl;
+    pimpl->v = l.pimpl->v;
+}
+
+List_int::~List_int() {
+    delete pimpl;
+}
+
+void List_int::prepend(int el) {
+    pimpl->v.resize(pimpl->v.size()+1);
+    for(int i = pimpl->v.size() - 1; i > 0; i--)
+        pimpl->v[i] = pimpl->v[i - 1];
+    pimpl->v[0] = el;
+}
+
+void List_int::append(int el) {
+    pimpl->v.push_back(el);
+}
+
+void List_int::stampa() const {
+    for(auto e: pimpl->v)
+        std::cout << e << std::endl;
+}
+````
+
+Codice presente nel [main](Pimpl/princ.cpp).
+
+````c++
+#include "List_int.h"
+
+int main(){
+    List_int l;
+    l.append(1);
+    l.append(2);
+    l.append(3);
+    l.prepend(0);
+    l.stampa();
+    return 0;
+}
+````
+
+### <p id="dl">Double Linked List</p>
+
+Codice presente nell' [header](DoubleLinkedList/ListDL.h).
+````c++
+#include <cstdlib>
+#include <iostream>
+
+class ListDL {
+    public:
+        ListDL();
+        ListDL(const ListDL& s);
+        ~ListDL();
+        void prepend(int e);
+        void append(int e);
+    private:
+        struct Cell {
+            int info;
+            Cell* next;
+            Cell* prev;
+        };
+        typedef Cell* Pcell;
+        Pcell head;
+        Pcell tail;
+        void copy(Pcell h, Pcell t);
+};
+````
+
+Codice presente nel [corpo](DoubleLinkedList/ListDL.cpp).
+````c++
+
+````
 
