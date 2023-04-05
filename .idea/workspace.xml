@@ -14,12 +14,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c06a81f-aa4f-477d-a57f-6c108fd0f6a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DoubleLinkedList/ListDL.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DoubleLinkedList/ListDL.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hackerrank/4/Polynomial1.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hackerrank/4/Polynomial2.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hackerrank/4/Polynomial3.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CircularList/ListC.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hackerrank/4/Polynomial.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hackerrank/4/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoubleLinkedList/ListDL.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DoubleLinkedList/ListDL.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoubleLinkedList/ListDL.h" beforeDir="false" afterPath="$PROJECT_DIR$/DoubleLinkedList/ListDL.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackerrank/4/Polynomial1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Hackerrank/4/Polynomial1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackerrank/4/Polynomial2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Hackerrank/4/Polynomial2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackerrank/4/Polynomial3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Hackerrank/4/Polynomial3.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/theory.md" beforeDir="false" afterPath="$PROJECT_DIR$/theory.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +39,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/DoubleLinkedList/ListDL.cpp" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/DoubleLinkedList/ListDL.h" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Hackerrank/4/Polynomial2.cpp" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Hackerrank/4/Polynomial3.cpp" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Hackerrank/4/main.cpp" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/List_int/list_int.cpp" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/List_int/list_int.h" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Pimpl/List_int.cpp" root0="SKIP_INSPECTION" />
@@ -137,7 +143,8 @@
       <workItem from="1680426272262" duration="626000" />
       <workItem from="1680510081771" duration="4022000" />
       <workItem from="1680514167661" duration="12000" />
-      <workItem from="1680514188696" duration="1252000" />
+      <workItem from="1680514188696" duration="1878000" />
+      <workItem from="1680683662041" duration="4477000" />
     </task>
     <servers />
   </component>

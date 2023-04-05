@@ -1,31 +1,5 @@
-#include<iostream>
-#include<vector>
-#include<list>
-
-class Polynomial{
-    public:
-        Polynomial();
-        Polynomial(const Polynomial& p);
-        void set(int exponent, int coeff);
-        int at(int exponent) const;
-        void read();
-        int evaluate(int x) const;
-        Polynomial differentiate(int order) const;
-        int degree() const;
-        void print() const;
-
-    private:
-        struct power{
-          int coeff;
-          int exp;
-        };
-        std::vector<power> v;
-        int intpow(int base, int exponent) const;
-};
-
-
+#include "Polynomial.h"
 //////// Pre-implemented part/////////////
-
 //Do not change this method! It reads a Polynomial
 void Polynomial::read() {
   int coeff, exponent;
@@ -67,7 +41,6 @@ int Polynomial::intpow(int base, int exponent) const {
 
 //Methods for exercise 1
 
-
 //Default constructor: builds the polynomial 0
 Polynomial::Polynomial() {
     set(0,0);
@@ -83,18 +56,8 @@ Polynomial::Polynomial(const Polynomial& p) {
 //Notice that we have only one version of at
 //It does not return a reference, just an int. So we can only read with at!
 int Polynomial::at(int exponent) const {
-    bool found = false;
-    int coeff;
-    for(int i = 0; i < v.size() && !found; i++){
-        if(v.at(i).exp == exponent){
-            found = true;
-            coeff = v.at(i).coeff;
-        }
-    }
-    return coeff;
+    return v[exponent].coeff;
 }
-
-
 
 //Set to coeff the coefficient of x^exponent. If this is present,
 //it will be overwritten. Setting the coefficient to 0 means
@@ -105,48 +68,27 @@ void Polynomial::set(int exponent, int coeff) {
     }
     for(int i = 0; i <= v.size(); i++){
         if(i == exponent){
-            v.at(i).coeff = coeff;
-            v.at(i).exp = exponent;
+            v[i].coeff = coeff;
+            v[i].exp = exponent;
+            //v.at(i).coeff = coeff;
+            //v.at(i).exp = exponent;
         }
     }
 }
 
-
-
 //Evaluate a polynomial for a certain x
 int Polynomial::evaluate(int x) const{
+    if(x == 0) return 0;
     int sum = 0;
     for(int i = 0; i < v.size(); i++){
-        sum += v.at(i).coeff * intpow(x, v.at(i).exp); // intpow(x, v.at(i).exp)
-    }
+        sum += v[i].coeff * intpow(x, v[i].exp); // intpow(x, v.at(i).exp)
+    }/*
+    for(auto e: v){
+        sum += e.coeff * intpow(x, e.exp);
+    }*/
     return sum;
 }
 
-
-//Methods for exercise 2
-
-
-//Returns the degree of a polynomial. The polynomial 0 has degree 0
-int Polynomial::degree() const{
-    return v.at(v.size() - 1).exp;
-}
-
-
-
-//Methods for exercise 3
-
-//This *recursive* function computes the n-th derivative of the polynomial
-Polynomial Polynomial::differentiate(int order) const {
-  return *this;
-}
-
-
-
-int main() {
-  Polynomial x;
-  x.read();
-
-  x.print();
-
-  return 0;
+void fun(Polynomial p, int a) {
+  std::cout<<p.evaluate(a)<<std::endl;
 }

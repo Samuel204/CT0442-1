@@ -12,6 +12,9 @@ class ListDL {
         int& at(int pos);
         int& at(int pos) const;
         bool operator==(const ListDL& l) const;
+        const ListDL operator=(const ListDL& l);
+        ListDL operator+(const ListDL& l) const;
+        ListDL operator*(unsigned int n) const;
     private:
         struct Cell {
             int info;

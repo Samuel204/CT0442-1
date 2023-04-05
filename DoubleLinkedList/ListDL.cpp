@@ -78,6 +78,53 @@ bool ListDL::operator==(const ListDL& l) const{
     return (pc1 == pc2);
 }
 
+const ListDL ListDL::operator=(const ListDL &l) {
+    if(this != &l){
+        Pcell pc = head;
+        while(pc != nullptr){
+            pc = pc->next;
+            delete head;
+            head = pc;
+        }
+        head = nullptr;
+        tail = nullptr;
+        pc = l.head;
+        while(pc != nullptr){
+            append(pc->info);
+            pc = pc->next;
+        }
+    }
+    return *this;
+}
+
+ListDL ListDL::operator+(const ListDL &l) const {
+    ListDL ris;
+    Pcell pc = head;
+    while(pc != nullptr){
+        ris.append(pc->info);
+        pc = pc->next;
+    }
+    pc = l.head;
+    while(pc != nullptr){
+        ris.append(pc->info);
+        pc = pc->next;
+    }
+    return ris;
+}
+
+ListDL ListDL::operator*(unsigned int n) const{
+    ListDL ris;
+    for(int i = 0; i < n; i++){
+        Pcell pc = head;
+        while(pc!= head){
+            ris.append(pc->info);
+            pc = pc->next;
+        }
+    }
+    return ris;
+}
+
+
 int main(){
     ListDL l1,l2;
     l1.append(2);
