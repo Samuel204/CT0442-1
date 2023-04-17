@@ -18,6 +18,6 @@ void print(ListaCirc l){
 }
 
 int main(){
-    
+
     return 0;
 }

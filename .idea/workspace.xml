@@ -14,16 +14,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c06a81f-aa4f-477d-a57f-6c108fd0f6a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CircularList/ListC.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hackerrank/4/Polynomial.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Hackerrank/4/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hackerrank/5/DL String 1.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hackerrank/5/DL String 2.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hackerrank/5/DL String 3.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hackerrank/5/DL String.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CircularList/ListC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CircularList/ListC.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoubleLinkedList/ListDL.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DoubleLinkedList/ListDL.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DoubleLinkedList/ListDL.h" beforeDir="false" afterPath="$PROJECT_DIR$/DoubleLinkedList/ListDL.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackerrank/4/Polynomial1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Hackerrank/4/Polynomial1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackerrank/4/Polynomial2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Hackerrank/4/Polynomial2.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackerrank/4/Polynomial3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Hackerrank/4/Polynomial3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/theory.md" beforeDir="false" afterPath="$PROJECT_DIR$/theory.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +141,12 @@
       <workItem from="1680510081771" duration="4022000" />
       <workItem from="1680514167661" duration="12000" />
       <workItem from="1680514188696" duration="1878000" />
-      <workItem from="1680683662041" duration="4477000" />
+      <workItem from="1680683662041" duration="4509000" />
+      <workItem from="1680696762295" duration="1240000" />
+      <workItem from="1681287623671" duration="1796000" />
+      <workItem from="1681461394213" duration="1222000" />
+      <workItem from="1681468916632" duration="588000" />
+      <workItem from="1681542203472" duration="3456000" />
     </task>
     <servers />
   </component>

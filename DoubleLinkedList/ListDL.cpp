@@ -125,15 +125,7 @@ ListDL ListDL::operator*(unsigned int n) const{
 }
 
 
-int main(){
-    ListDL l1,l2;
-    l1.append(2);
-    l2.append(2);
-    if(l1 == l2)
-        std::cout<<"sono uguali"<<std::endl;
-    else
-        std::cout<<"sono diverse"<<std::endl;
-}
+
 
 
 
